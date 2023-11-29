@@ -1,6 +1,16 @@
 # Rasa Menu - Sample Bot
 
-This is an example of a bot that displays a menu and a submenu.
+Explore this example of a conversational bot that showcases menu and submenu interactions. This bot allows users to interact with menus using letter-based selections and text-based commands, enhancing user engagement.
+
+Key Features:
+
+Intuitive menu navigation with letter selections.
+Seamless transition between main menus and submenus.
+Support for direct intent-based commands.
+Clear slot management for menu tracking.
+This repository serves as a practical demonstration of how to implement menu-driven interactions in Rasa chatbots. Explore the code and documentation to learn more about building conversational experiences with Rasa.
+
+## Detail
 
 In some channels, option buttons cannot be used. The goal is to show a menu with letters so that the user can navigate through different options. Additionally, the user can also type what they want to do.
 
