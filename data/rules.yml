@@ -1,0 +1,47 @@
+version: "3.1"
+
+rules:
+- rule: Handle the option anytime the user gives it
+  steps:
+  - intent: give_option
+  - action: action_handle_options
+
+- rule: Handle the option info enterprise
+  steps:
+  - intent: back_to_main_menu
+  - action: utter_back_to_main_menu
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Handle the option info enterprise
+  steps:
+  - intent: info_enterprise
+  - action: utter_info_enterprise
+
+- rule: Handle the option request turn
+  steps:
+  - intent: turn_options
+  - action: utter_turn_options
+
+- rule: Handle the option list people
+  steps:
+  - intent: list_people
+  - action: action_list_people
+
+- rule: Handle the option request turn
+  steps:
+  - intent: request_turn
+  - action: action_request_turn
+
+- rule: Handle the option list turns
+  steps:
+  - intent: list_turns
+  - action: action_list_turns
+
+- rule: Handle the option delete turn
+  steps:
+  - intent: delete_turn
+  - action: action_delete_turn

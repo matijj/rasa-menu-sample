@@ -1,0 +1,86 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - give_option
+  - back_to_main_menu
+  - info_enterprise
+  - list_people
+  - turn_options
+  - request_turn
+  - list_turns
+  - delete_turn
+
+entities:
+- option
+
+slots:
+  option:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: option
+  # tracking in what menu the user curtently is
+  # this slot is only used in custom actions and is not related to any entity
+  current_menu: 
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_intent
+        value: "main"
+        intent: greet
+      - type: from_intent
+        value: "main"
+        intent: back_to_main_menu
+      - type: from_intent
+        value: "turn_options"
+        intent: turn_options
+      - type: custom
+        action: action_clear_current_menu
+
+actions:
+- action_handle_options
+- action_clear_current_menu
+- action_list_people
+- action_request_turn
+- action_list_turns
+- action_delete_turn
+
+responses:
+  utter_greet:
+  - text: |-
+      Hello! In that I can help?
+        A. Info Enterprise
+        B. Turns
+        C. List People
+      Choose an option or write to me what you are looking for.
+
+  utter_back_to_main_menu:
+  - text: |-
+      This is the main menu:
+        A. Info Enterprise
+        B. Turns
+        C. List People
+      Choose an option or write to me what you are looking for.
+
+  utter_goodbye:
+  - text: |-
+     If you have any other questions, I'm here to help you 😊
+     Bye! 👋
+  
+  utter_turn_options:
+  - text: |-
+      Please, select an option:
+        A. Request a new turn
+        B. List your turns
+        C. Delete a turn
+        D. Back to main menu
+
+  utter_info_enterprise:
+  - text: "This is the info of the enterprise."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+

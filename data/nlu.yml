@@ -1,0 +1,100 @@
+version: "3.1"
+
+nlu:
+# See https://rasa.com/docs/rasa/nlu-training-data/#regular-expressions-for-entity-extraction
+# for more information
+- regex: option
+  examples: |
+    - /^[A-Za-z]$/i
+- intent: give_option
+  examples: |
+    - [A](option)
+    - [B](option)
+    - [C](option)
+    - [D](option)
+    - [E](option)
+    - [F](option)
+    - [G](option)
+    - [H](option)
+    - [I](option)
+    - [a](option)
+    - [b](option)
+    - [c](option)
+    - [d](option)
+    - [e](option)
+    - [f](option)
+    - [g](option)
+    - [h](option)
+    - [i](option)
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - thanks bye
+    - thanks
+
+- intent: back_to_main_menu
+  examples: |
+    - Main menu
+
+- intent: info_enterprise
+  examples: |
+    - Info Enterprise
+    - Info
+    - Enterprise
+    - info enterprise
+    - info
+    - enterprise
+    - I want to know about the enterprise
+
+- intent: turn_options
+  examples: |
+    - Turn option
+    - Turn
+
+- intent: list_people
+  examples: |
+    - List people
+    - People
+    - List
+
+- intent: request_turn
+  examples: |
+    - Request turn
+    - Request a turn
+    - I want a turn
+
+- intent: list_turns
+  examples: |
+    - List turns
+    - I want to see my turns
+
+- intent: delete_turn
+  examples: |
+    - Delete turn
+    - Delete a turn
+    - I want to delete a turn

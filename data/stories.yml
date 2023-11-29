@@ -1,0 +1,22 @@
+version: "3.1"
+
+stories:
+
+- story: choose option happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: give_option
+  - action: action_handle_options
+
+- story: choose option direct path
+  steps:
+  - intent: give_option
+  - action: action_handle_options
+
+- story: request turn happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: turn_options
+  - action: utter_turn_options
