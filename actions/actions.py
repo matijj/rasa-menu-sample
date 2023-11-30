@@ -40,7 +40,7 @@ class ActionHandleOptions(Action):
                 "A": "action_request_turn",
                 "B": "action_list_turns",
                 "C": "action_delete_turn",
-                "D": "utter_back_to_main_menu"
+                "D": ("utter_back_to_main_menu", "main"),
             }
         }
         option = tracker.get_slot("option")
